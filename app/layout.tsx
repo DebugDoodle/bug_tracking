@@ -1,8 +1,37 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Roboto_Mono } from "next/font/google";
+import { Work_Sans } from "next/font/google";
+import { Rubik } from "next/font/google";
+import { Merriweather_Sans } from "next/font/google";
+import { Nunito_Sans } from "next/font/google";
 import "./globals.css";
+import {Providers} from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
+export const roboto_mono = Roboto_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+})
+export const rubik = Rubik({
+  subsets: ['latin'],
+  display: 'swap',
+})
+
+export const merriweather_Sans = Merriweather_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+})
+
+export const nunito_sans = Nunito_Sans({
+  subsets: ['latin'],
+  display: 'swap'
+})
+
+export const work_sans = Work_Sans({
+  subsets: ['latin'],
+  display: 'swap'
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +44,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className='dark'>
+       <body className={work_sans.className}>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 }
